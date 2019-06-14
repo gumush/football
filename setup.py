@@ -56,15 +56,12 @@ setup(
         'opencv-python',
         'scipy',
         'gym',
-        'baselines>=0.1.6',
+        'baselines @ git+git://github.com/openai/baselines.git@master#egg=baselines',
     ],
     extras_require={
         'tf_cpu': ['tensorflow<2.0'],
         'tf_gpu': ['tensorflow-gpu<2.0'],
     },
-    dependency_links=[
-      'git+https://github.com/openai/baselines.git@master#egg=baselines-0.1.6'
-    ],
     include_package_data=True,
     keywords='gfootball reinforcement-learning python machine learning',
     ext_modules=[CMakeExtension('brainball_cpp_engine')],
