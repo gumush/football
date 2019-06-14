@@ -11,5 +11,5 @@ RUN apt-get update && apt-get install -yq git cmake build-essential \
 
 COPY . /gfootball
 RUN if [ $DEVICE = "cpu" ]; then pip3 install 'tensorflow<2.0'; fi
-RUN cd /gfootball && pip3 install .[tf_$DEVICE] --process-dependency-links
+RUN cd /gfootball && pip3 install .[tf_$DEVICE]
 WORKDIR '/gfootball'
